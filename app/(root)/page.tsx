@@ -81,7 +81,7 @@ const Dashboard = async () => {
                   url={file.url}
                 />
 
-                <div className="flex w-full flex-col xl:flex-row xl:justify-between">
+                <div className="flex w-full items-center xl:flex-row xl:justify-between">
                   <div className="flex flex-col gap-1">
                     
                     <p className="text-[14px] leading-[20px] font-semibold line-clamp-1 w-full text-[#333F4E] sm:max-w-[200px] lg:max-w-[250px]">
@@ -93,7 +93,7 @@ const Dashboard = async () => {
                       className="text-[12px] leading-[16px] font-normal"
                     />
                   </div>
-                  <ActionDropdown file={file} />
+                  <ActionDropdown file={file} className="pl-10" />
                 </div>
               </Link>
             ))}

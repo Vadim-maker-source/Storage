@@ -32,9 +32,9 @@ export const Chart = ({ used = 0 }: { used: number }) => {
   const chartData = [{ storage: "used", 10: used, fill: "white" }];
 
   return (
-    <Card className="chart">
+    <Card className="flex items-center rounded-[20px] bg-[#FA7275] p-5 text-white md:flex-col xl:flex-row">
       <CardContent className="flex-1 p-0">
-        <ChartContainer config={chartConfig} className="chart-container">
+        <ChartContainer config={chartConfig} className="mx-auto aspect-square w-[180px] text-white xl:w-[250px]">
           <RadialBarChart
             data={chartData}
             startAngle={90}
@@ -46,7 +46,7 @@ export const Chart = ({ used = 0 }: { used: number }) => {
               gridType="circle"
               radialLines={false}
               stroke="none"
-              className="polar-grid"
+              className="first:fill-white/20 last:fill-[#FA7275]"
               polarRadius={[86, 74]}
             />
             <RadialBar dataKey="storage" background cornerRadius={10} />
@@ -64,7 +64,7 @@ export const Chart = ({ used = 0 }: { used: number }) => {
                         <tspan
                           x={viewBox.cx}
                           y={viewBox.cy}
-                          className="chart-total-percentage"
+                          className="fill-white text-4xl font-bold"
                         >
                           {used && calculatePercentage(used)
                             ? calculatePercentage(used)
@@ -89,9 +89,9 @@ export const Chart = ({ used = 0 }: { used: number }) => {
           </RadialBarChart>
         </ChartContainer>
       </CardContent>
-      <CardHeader className="chart-details">
-        <CardTitle className="chart-title">Available Storage</CardTitle>
-        <CardDescription className="chart-description">
+      <CardHeader className="flex flex-1 items-center px-3 py-0 sm:px-5 lg:p-3 xl:pr-5 w-56">
+        <CardTitle className="text-[20px] leading-[28px] font-semibold md:text-center lg:text-left">Available Storage</CardTitle>
+        <CardDescription className="text-[16px] leading-[24px] font-medium mt-2 w-full text-white/70 md:text-center lg:text-left">
           {used ? convertFileSize(used) : "2GB"} / 2GB
         </CardDescription>
       </CardHeader>

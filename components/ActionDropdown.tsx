@@ -17,7 +17,7 @@ import {
     DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
 import { actionsDropdownItems } from "@/constants"
-import { constructDownloadUrl } from "@/lib/utils"
+import { cn, constructDownloadUrl } from "@/lib/utils"
 import Image from "next/image"
 import Link from "next/link"
 import { Models } from "node-appwrite"
@@ -28,7 +28,7 @@ import { deleteFile, renameFile, updateFileUsers, updateRemoveUsers } from "@/li
 import { usePathname } from "next/navigation"
 import { FileDetails, ShareInput } from "./ActionsModalContent"
 
-const ActionDropdown = ({ file }: { file: Models.Document }) => {
+const ActionDropdown = ({ file, className }: { file: Models.Document, className: string }) => {
     const [isModalOpen, setIsModalOpen] = useState(false)
     const [isDropdownOpen, setIsDropdownOpen] = useState(false)
     const [action, setAction] = useState<ActionType | null>(null)
@@ -86,7 +86,7 @@ const ActionDropdown = ({ file }: { file: Models.Document }) => {
       const { value, label } = action
 
       return (
-      <DialogContent className="rounded-[26px] w-[90%] max-w-[400px] px-6 py-8 text-[14px] leading-[20px] font-medium">
+      <DialogContent className={`${cn("rounded-[26px] w-[90%] max-w-[400px] px-6 py-8 text-[14px] leading-[20px] font-medium"), className}`}>
         <DialogHeader className="flex flex-col gap-3">
           <DialogTitle className="text-center text-[#333F4E]">{label}</DialogTitle>
           {value === 'rename' && (
