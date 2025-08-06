@@ -93,7 +93,7 @@ const Dashboard = async () => {
                       className="text-[12px] leading-[16px] font-normal"
                     />
                   </div>
-                  <ActionDropdown file={file} className="pl-10" />
+                  <ActionDropdown file={file} className="pl-4" />
                 </div>
               </Link>
             ))}

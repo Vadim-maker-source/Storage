@@ -86,7 +86,7 @@ const ActionDropdown = ({ file, className }: { file: Models.Document, className:
       const { value, label } = action
 
       return (
-      <DialogContent className={`${cn("rounded-[26px] w-[90%] max-w-[400px] px-6 py-8 text-[14px] leading-[20px] font-medium"), className}`}>
+      <DialogContent className={`${cn("rounded-[26px] w-[90%] max-w-[400px] px-6 py-8 text-[14px] leading-[20px] font-medium")}`}>
         <DialogHeader className="flex flex-col gap-3">
           <DialogTitle className="text-center text-[#333F4E]">{label}</DialogTitle>
           {value === 'rename' && (
@@ -127,7 +127,7 @@ const ActionDropdown = ({ file, className }: { file: Models.Document, className:
   return (
     <Dialog open={isModalOpen} onOpenChange={setIsModalOpen}>
   <DropdownMenu open={isDropdownOpen} onOpenChange={setIsDropdownOpen}>
-  <DropdownMenuTrigger className="outline-none ring-offset-transparent focus:ring-transparent focus:ring-offset-0 focus-visible:outline-none focus-visible:ring-0 focus-visible:ring-transparent focus-visible:ring-offset-0"><Image src="/assets/icons/dots.svg" alt="Dots" width={34} height={34} /></DropdownMenuTrigger>
+  <DropdownMenuTrigger className={`${cn("outline-none ring-offset-transparent focus:ring-transparent focus:ring-offset-0 focus-visible:outline-none focus-visible:ring-0 focus-visible:ring-transparent focus-visible:ring-offset-0"), className}`}><Image src="/assets/icons/dots.svg" alt="Dots" width={34} height={34} /></DropdownMenuTrigger>
   <DropdownMenuContent>
     <DropdownMenuLabel className="max-w-[200px] truncate">
       {/* @ts-expect-error - Временное решение, если name действительно есть */}
