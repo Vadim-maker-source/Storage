@@ -28,7 +28,7 @@ import { deleteFile, renameFile, updateFileUsers, updateRemoveUsers } from "@/li
 import { usePathname } from "next/navigation"
 import { FileDetails, ShareInput } from "./ActionsModalContent"
 
-const ActionDropdown = ({ file, className }: { file: Models.Document, className: string }) => {
+const ActionDropdown = ({ file, className }: { file: Models.Document, className?: string }) => {
     const [isModalOpen, setIsModalOpen] = useState(false)
     const [isDropdownOpen, setIsDropdownOpen] = useState(false)
     const [action, setAction] = useState<ActionType | null>(null)
